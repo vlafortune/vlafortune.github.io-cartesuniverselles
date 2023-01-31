@@ -1,0 +1,19 @@
+{
+  "name": "Cartes universelles",
+  "version": "1.0.0",
+  "description": "« Cartes universelles pour voyages sédentaires » est un projet en arts visuels qui allie art imprimé et art numérique pour interroger l’impact de l’utilisation de Google Maps sur notre rapport à l’espace et au temps. Une série d’estampes évoquant des cartes géographiques de territoires fictifs seront reprises dans une application interactive web qui simulera la facture visuelle de Google Maps. Dans cette version simplifiée et contemplative de l’application bien connue, des territoires et des itinéraires irréels se métamorphoseront en continu au gré de la navigation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vlafortune/vlafortune.github.io-cartesuniverselles.git"
+  },
+  "author": "Violaine Lafortune",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vlafortune/vlafortune.github.io-cartesuniverselles/issues"
+  },
+  "homepage": "https://github.com/vlafortune/vlafortune.github.io-cartesuniverselles#readme"
+}
