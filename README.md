@@ -18,8 +18,20 @@ Tutoriel à suivre : https://docs.mapbox.com/help/tutorials/get-started-mts-and-
 Édition du style des cartes : https://studio.mapbox.com/
 
 ## Guide
-### Créer une source de données
-tilesets upload-source NOM_UTILISATEUR ID_SOURCE CHEMIN_SOURCE --token $(cat token)
+Pour construire une carte on doit utiliser une recette qui, grosso modo, détermine à quel niveaux de zoom un ensemble de sources de données sont utilisées.
 
+### Sources de données
+Les sources de données sont de fichier geojson dans lesquels chaque ligne représente un objet (line-delimited)
+Créer : tilesets upload-source NOM_UTILISATEUR ID_SOURCE CHEMIN_SOURCE --token $(cat token)
+Lister : tilesets list-sources NOM_UTILISATEUR --token $(cat token)
 
+### Recette
+*Note : utiliser un niveau de zoom supérieur à 13 dans une recette impliquera des couts plus importants*
+Le fichier "hello-world-recipe.json" contient un exemple de recette qui n'a qu'une source de données.
 
+### Tileset
+1. Créer : tilesets create NOM_UTILISATEUR.hello-world-tiles --recipe hello-world-recipe.json --name "hello world" --token $(cat token) # Tous les paramètres indiqués sont nécessaires
+  * Note : une fois créé, le tileset est disponible ici : https://studio.mapbox.com/tilesets/, mais il n'est pas visible. Il faut d'abord le publier*
+2. Publier le tileset : tilesets publish NOM_UTILISATEUR.hello-world-tiles --token $(cat token) # Attendre quelques minutes pour que Mapbox publie le tileset
+  * Pour vérifier l'état d'avancement : tilesets status NOM_UTILISATEUR.hello-world-tiles 
+  * Le tileset est maintenant disponible pour l'exploration https://studio.mapbox.com/tilesets/

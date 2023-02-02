@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "layers": {
+    "layer1": {
+      "source": "mapbox://tileset-source/addwike/pop_perso",
+      "minzoom": 0,
+      "maxzoom": 13 
+    }
+  }
+}

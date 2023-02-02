@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./dist/fonofone.js"></script>
-
-    <title>Fonofone</title>
+    <meta charset="utf-8">
+    <title>Cartes universelles</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.11.0/mapbox-gl.js"></script>
+    <script src="local.js"></script>
+    <script src="heberge.js"></script>
   </head>
   <body>
-    <h1>Fonofone</h1>
-    <script> console.log("allo") </script>
+    <!-- inspiration : https://docs.mapbox.com/mapbox-tiling-service/examples/bathymetry/ -->
+    <header>
+      <menu>
+        <a href="a-propos.html">À propos</a>
+      </menu>
+    </header>
+    <div id="map"></div>
+    <script>
+      // Utiliser le "default access token situé : https://account.mapbox.com/ 
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYWRkd2lrZSIsImEiOiJja3d1MHV4aG0xN2FwMndtdDJ0ZXY3NmFmIn0.eTx4feAQS2j4f9bU4BIUKg';
+      const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/addwike/cldakkum6007r01qfhpm8nm82',
+        zoom: 3,
+        center: [-70, 45]
+      });
+
+      map.on('load', () => {
+        // Ajouter les données
+        ajouter_geojson_local(map);
+        ajouter_geojson_heberge(map);
+      });
+    </script>
   </body>
 </html>
