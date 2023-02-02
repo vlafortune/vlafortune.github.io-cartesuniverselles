@@ -16,6 +16,7 @@ npm i # Installer les dépendances web (si nécessaire)
 ## Références 
 Tutoriel à suivre : https://docs.mapbox.com/help/tutorials/get-started-mts-and-tilesets-cli/
 Édition du style des cartes : https://studio.mapbox.com/
+API Datasets : https://github.com/mapbox/mapbox-cli-py#datasets-create
 
 ## Guide
 Pour construire une carte on doit utiliser une recette qui, grosso modo, détermine à quel niveaux de zoom un ensemble de sources de données sont utilisées.
